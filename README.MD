@@ -11,6 +11,7 @@ This code involves
 Ref: https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/events_component_fire.htm
 
 4)Idea taken from this post (Aura Id of dynamic component is coming back as undefined) Aura:Id of dynamically created compontns cannot be accessed
+https://salesforce.stackexchange.com/questions/143138/auraid-of-dynamically-created-compontns-cannot-be-accessed
 
 5) A modal concept to mimic force:recordedit event (note I have created force:recordedit component and mimicked it to look like $A.get("e.force:editRecord") event)
 
