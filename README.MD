@@ -1,4 +1,14 @@
 Dynamic component creation using Lighting
+
+Aim: As of today force:editrecord event does not have a callback on save mechanism/ If used as a standalone component there is no way to trigger a refresh on save of the record to display the changed value to the original component that calls this event (or) refresh the page. To get through this limitation, this component/app will create the force:editrecord component / save buttom dynamically and let the developer get control of post save actions using force:recordsavesucess event.
+
+1) The limitation of force:recordsavesucess is that this event works in conjuction with force:recordedit component and not $A.get("e.force:editRecord"); event.
+
+2) The limitation of force:editrecord component is there is no callback after the editRecordEvent.fire();
+
+
+https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/ref_force_editRecord.htm
+
 This code involves
 
 1) Winter 18 developer edition.
