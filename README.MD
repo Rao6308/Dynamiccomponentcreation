@@ -16,4 +16,4 @@ Ref: https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/
 
 http://www.sfdcmonkey.com/2017/04/15/modal-box-lightning-component-salesforce/
 
-[![screenshot](https://github.com/Rao6308/Dynamiccomponentcreation/blob/master/src/)]
+[![screenshot](https://github.com/Rao6308/Dynamiccomponentcreation/blob/master/src/5HIp5.png)]
