@@ -1,0 +1,51 @@
+<aura:component controller="AccountDevelopmentTaskController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:registerEvent name="handleedit" type="c:handleeditevent"/>
+    
+    <aura:attribute name="challenges" type="Task[]" access="GLOBAL"/>
+    <aura:attribute name="id" type="String" access="GLOBAL" />
+    <aura:handler name="init" value="{!this}" action="{!c.start}"/>
+    <aura:handler name="handleedit" event="c:handleeditevent" action="{!c.handleedit}" />
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.start}"/>
+    
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    
+    <div class="slds-container--fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                Subject
+            </thead>
+            <tbody>
+                <aura:iteration var="chlng" items="{!v.challenges}">
+                    <tr>
+                        <th scope="row" data-label="Challenge">
+                            <div class="slds-truncate slds-text-link" title="">
+                                <div data-record="{!chlng.Id}" onclick="{!c.showEditPanel}">
+                                    <ui:outputText value="{!chlng.Subject}" class="slds-text-link_reset" />
+                                </div>
+                            </div>
+                        </th>
+                        ...
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    <aura:if isTrue="{!v.isOpen}">
+    <div class="demo-only" style="height: 640px;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal Header</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    {!v.body}
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,7 @@
+public class AccountDevelopmentTaskController {
+    
+    @AuraEnabled
+    public static Task loadChallenges(id tId){
+        return [select id,Subject from task where whoId=:tId];
+    }
+}
